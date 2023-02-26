@@ -1,0 +1,95 @@
+<!-- This file is part of https://github.com/jainamoswal/Flask-Example. -->
+<!-- Usage covered in IDC lICENSE -->
+<!-- Jainam Oswal. jainam.me -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A simple HTML document</title>
+</head>
+<body>
+    <form action= "http://localhost:5000/main" method = "post">
+        <p>Hello 👋</p>
+        <p>Record transaction entry?</p>
+        <p><input type = "submit" value = "Yes" /></p>
+    </form>
+
+    <form action = "http://localhost:5000/entry" method = "post">
+        <p>Enter Name:</p>
+        <p><input type = "text" name = "name" /></p>
+        <p>Enter Invoice Number:</p>
+        <p><input type = "text" name = "invoice" /></p>
+        <p>Enter Procedure:</p>
+        <p><input type = "text" name = "procedure" /></p>
+        <p>Enter Amount:</p>
+        <p><input type = "number" name = "amount" /></p>
+        <p>Enter Claim Amount:</p>
+        <p><input type = "number" name = "claim" /></p>
+        <p>Enter Cash Amount:</p>
+        <p><input type = "number" name = "cash" /></p>
+        <p>Enter PayNow Amount:</p>
+        <p><input type = "number" name = "paynow" /></p>
+        <p>Enter NETS Amount:</p>
+        <p><input type = "number" name = "nets" /></p>
+        <p>Enter Insurance Amount (AIA/IHP/Allianz):</p>
+        <p><input type = "number" name = "insurance" /></p>
+        <p>Enter B/C Amount:</p>
+        <p><input type = "number" name = "bc" /></p>
+        <p>Enter Lab Materials Amount:</p>
+        <p><input type = "number" name = "labmat" /></p>
+        <p>Enter Total:</p>
+        <p><input type = "number" name = "total" /></p>
+        <p>Enter Net Total:</p>
+        <p><input type = "number" name = "nettotal" /></p>
+            
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
+
+    <form action= "http://localhost:5000/verify" method = "post">
+        <ul>
+            {% for detail in details %}
+                <li><a href="#">{{ detail }}</a></li>
+            {% endfor %}
+        </ul>
+        <p>Are these correct?</p>
+        <p><input type = "button" name = "answer" value = "Yes" /></p>
+        <p><input type = "button" name = "answer" value = "No" /></p>
+    </form>
+    
+    <form action= "http://localhost:5000/extra/" method = "post">
+        <p>Additional transaction for {{% name %}}?</p>
+        <p><input type = "button" name = "answer" value = "Yes" /></p>
+        <p><input type = "button" name = "answer" value = "No" /></p>
+    </form>
+    
+    <form action = "http://localhost:5000/reentry" method = "post">
+        <p>Enter Invoice Number:</p>
+        <p><input type = "text" name = "invoice" value = "{{% invoice %}}" /></p>
+        <p>Enter Procedure:</p>
+        <p><input type = "text" name = "procedure" /></p>
+        <p>Enter Amount:</p>
+        <p><input type = "number" name = "amount" /></p>
+        <p>Enter Claim Amount:</p>
+        <p><input type = "number" name = "claim" /></p>
+        <p>Enter Cash Amount:</p>
+        <p><input type = "number" name = "cash" /></p>
+        <p>Enter PayNow Amount:</p>
+        <p><input type = "number" name = "paynow" /></p>
+        <p>Enter NETS Amount:</p>
+        <p><input type = "number" name = "nets" /></p>
+        <p>Enter Insurance Amount (AIA/IHP/Allianz):</p>
+        <p><input type = "number" name = "insurance" /></p>
+        <p>Enter B/C Amount:</p>
+        <p><input type = "number" name = "bc" /></p>
+        <p>Enter Lab Materials Amount:</p>
+        <p><input type = "number" name = "labmat" /></p>
+        <p>Enter Total:</p>
+        <p><input type = "number" name = "total" /></p>
+        <p>Enter Net Total:</p>
+        <p><input type = "number" name = "nettotal" /></p>
+            
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
+
+</body>
+</html>
